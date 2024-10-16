@@ -10,7 +10,20 @@
 ?>
 
 <footer id="colophon" class="site-footer">
-  <p>Created by <a href="https://wp-performance.com">https://wp-performance.com</a></p>
+    <nav class="secondary-navigation">
+        <?php
+        wp_nav_menu(
+            [
+                'theme_location' => 'secondary',
+                'container_id' => 'secondary-menu',
+            ]
+        );
+        ?>
+    </nav>
+    <div class="cr">
+        <span>Zeinab Shahidi Marnani</span> © <?php echo date('Y'); ?> <br> <span>All rights reserved</span>
+        <p class="dev-signature">Website by <a href="https://algorstudio.com">ALGOR Studio</a></a>
+    </div>
 </footer>
 
 </div><!-- #page -->

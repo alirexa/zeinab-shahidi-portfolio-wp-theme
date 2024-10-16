@@ -1,10 +1,9 @@
 import getThemeDir from './js-helpers/getThemeDir.mjs'
 import url from 'postcss-url'
 import postcssImport from 'postcss-import'
-import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 
-const plug = [postcssImport, tailwindcss, autoprefixer]
+const plug = [postcssImport, autoprefixer]
 
 // only for editor css
 if (process.env.IS_EDITOR) {
@@ -18,4 +17,5 @@ if (process.env.IS_EDITOR) {
 
 export default {
   plugins: plug,
+  map: true, // enable source mapping
 }

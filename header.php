@@ -19,33 +19,32 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-barba="wrapper">
     <?php wp_body_open(); ?>
-    <div id="page" class="site">
+    <!-- <span class="loading-screen">
+        <div class="shapes">
+            <p>loading</p>
+        </div>
+        <span class="loading-bar">
+            <span class="loaded-bar"></span>
+        </span>
+    </span> -->
+    <div id="page" class="site" data-barba="container" data-barba-namespace="home">
+
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'blank'); ?></a>
 
         <header id="masthead" class="site-header">
             <div class="site-branding">
-                <?php
-                the_custom_logo();
-                if (is_front_page() && is_home()) {
-                ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                <?php
-                } else {
-                ?>
-                    <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-                <?php
-                }
-                $blank_description = get_bloginfo('description', 'display');
-                if ($blank_description || is_customize_preview()) {
-                ?>
-                    <p class="site-description"><?php echo $blank_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                                                ?></p>
-                <?php } ?>
+                <a href="<?php echo get_home_url() ?>">
+                    Zeinab<br>
+                    Shahidi Marnani
+                </a>
             </div><!-- .site-branding -->
 
             <nav id="site-navigation" class="main-navigation">
+                <button class="mobile-nav-toggle">
+                    --
+                </button>
                 <?php
                 wp_nav_menu(
                     [
@@ -55,4 +54,5 @@
                 );
                 ?>
             </nav><!-- #site-navigation -->
+
         </header><!-- #masthead -->

@@ -1,0 +1,188 @@
+header.site-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 2;
+  /* display: none; */
+  position: fixed;
+  top: var(--size-sides-spacing);
+  /* width: 100svw; */
+  left: 0;
+  right: 0;
+  padding: 0 var(--size-sides-spacing);
+  transition: opacity 400ms ease-in-out;
+
+  body:not(.home) &.hidden {
+    opacity: 0;
+  }
+  .site-branding {
+    position: relative;
+    body:not(.home) &::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transform: scale(var(--nav-bg-scale));
+      z-index: -1;
+      background: radial-gradient(
+        rgba(255, 255, 255, var(--nav-bg-opacity)) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+    a {
+      text-decoration: none;
+      text-align: end;
+      display: block;
+      line-height: 1.2em;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--wp--preset--color--secondary);
+      body:not(.home) & {
+        color: var(--wp--preset--color--primary);
+      }
+      transition: all 500ms ease-in-out;
+      &:hover {
+        font-weight: bolder;
+      }
+    }
+    @media screen and (max-width: 48em) {
+    }
+  }
+
+  .main-navigation {
+    /* display: none; */
+    /* border: 1px solid red; */
+
+    position: relative;
+    body:not(.home) &::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transform: scale(var(--nav-bg-scale));
+      z-index: -1;
+      background: radial-gradient(
+        rgba(255, 255, 255, var(--nav-bg-opacity)) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+    @media screen and (min-width: 48em) {
+    }
+  }
+  .mobile-nav-toggle {
+    background: transparent;
+    border: 0;
+    @media screen and (min-width: 48em) {
+      display: none;
+    }
+  }
+}
+main.single-work header li.works-menu-item {
+  border: 4px solid var(--wp--preset--color--primary);
+}
+
+nav,
+.filters {
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+
+    a {
+      color: var(--wp--preset--color--primary);
+
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      padding: 0 5px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      body.home & {
+        color: var(--wp--preset--color--secondary);
+        font-weight: 100;
+      }
+
+      body:not(.home) & {
+        /* background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        border-radius: 7px; */
+        /* overflow: hidden; */
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 100%;
+        top: 50%;
+        height: 2px;
+        background-color: var(--wp--preset--color--accent);
+        transition: right 400ms cubic-bezier(0, 0, 0.2, 1);
+      }
+      &:hover {
+        &::after {
+          right: 0;
+        }
+      }
+    }
+  }
+  li {
+    text-align: start;
+    position: relative;
+
+    &.current-menu-item,
+    &.current-page-ancestor {
+      a {
+        &::after {
+          right: 0;
+        }
+      }
+    }
+    @media screen and (max-width: 48em) {
+      &.current_page_item {
+        border-color: var(--wp--preset--color--white);
+      }
+    }
+  }
+}
+
+header.about-sub-nav {
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: scale(var(--nav-bg-scale));
+    z-index: -1;
+    background: radial-gradient(
+      rgba(255, 255, 255, var(--nav-bg-opacity)) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+
+    position: fixed;
+    top: var(--size-sides-spacing);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+}

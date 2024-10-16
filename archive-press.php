@@ -13,21 +13,38 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-    <div class="main-content">
+<main id="primary" class="site-main press-archive">
+    <div class="main-content boxed-container">
 
+
+
+
+        <h1 class="screen-reader-text">Press</h1>
 
         <?php
         if (have_posts()) {
             /* Start the Loop */
+        ?>
+
+        <?php
             while (have_posts()) {
                 the_post();
-                if (!is_home() && !is_front_page()) {
-        ?>
-        <h1><?php the_title(); ?></h1>
+                $source_title = get_field('source_title');
+                $source_url = get_field('source_url');
+                $excerpt = get_field('excerpt');
+            ?>
+        <div class="grid-item">
+            <a href="<?php echo $source_url ?>" target="_blank">
+                <h2><span class="source_title"><?php echo $source_title; ?>: </span><?php the_title(); ?></h2>
+            </a>
+            <p class="excerpt">
+                <?php
+                        echo $excerpt;
+                        ?>
+            </p>
+        </div>
         <?php
-                }
-                the_content();
+
             }
         } else {
             ?>

@@ -48,6 +48,9 @@ export const viteConfig = {
       port: 3000,
     },
   },
+  css: {
+    devSourcemap: true,
+  },
 }
 
 export default defineConfig(viteConfig)

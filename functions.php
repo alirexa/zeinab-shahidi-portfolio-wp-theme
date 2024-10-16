@@ -2,9 +2,14 @@
 
 namespace  PressWindStarter;
 
+// $styles = wp_get_global_styles();
+// var_dump($styles);
+// wp_die();
+
 // not defined => development
 if (!defined('WP_ENV')) {
     define('WP_ENV', 'development');
+    // define('WP_ENV', 'production');
 }
 
 
@@ -25,7 +30,15 @@ if (file_exists(dirname(__FILE__) . '/inc/pwa_head.php')) {
  * Theme setup.
  */
 function setup()
+
 {
+    register_nav_menus([
+        'primary' => __('Primary Menu', 'zsh-portfolio'),
+        // 'about-page' => __('About page Sub-Menu', 'zsh-portfolio'),
+        'secondary' => __('Secondary Menu', 'zsh-portfolio'),
+        'about-submenu' => __('About page sub-menu', 'zsh-portfolio')
+    ]);
+
     add_theme_support('automatic-feed-links');
 
     add_theme_support('title-tag');

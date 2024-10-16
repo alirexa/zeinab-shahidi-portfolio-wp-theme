@@ -1,12 +1,14 @@
-/** fonts are loaded from the theme.json */
+/** Variables */
+@import './settings/settings.css';
 
-@import './settings/variables.css';
+/** Base Structure */
+@import './structure.css';
 
-@import 'tailwindcss/base';
-
-@import 'tailwindcss/components';
-
-@import 'tailwindcss/utilities';
+/** Navigation */
+@import './nav/navigation.css';
 
 /** DEFAULT FOR EXAMPLE */
 @import './default.css';
+
+/** Pages */
+@import './pages/pages.css';

@@ -1,13 +1,34 @@
-import importObserver from './importObserver.js'
-
-function main() {
-  console.log('hello Press Wind !!')
-}
+import isotopeGrid from './isotope-grid'
+// import barba from '@barba/core'
+// import { gsap } from 'gsap'
+// import initPreloader from './preloader-init'
+import Navigation from './navigation'
+import FrontPage from './front-page'
 
 document.addEventListener('DOMContentLoaded', () => {
-  main()
-
-  // importObserver
-  // use only name of file without extension and ./, root is ./assets/js
-  importObserver(document.querySelector('.site-footer'), 'hello')
+  const frontPage = new FrontPage()
+  const navigation = new Navigation()
+  isotopeGrid()
 })
+
+// class initApp {
+//   constructor() {
+//     this.initLoader()
+//   }
+
+//   initLoader() {
+//     let loadingScreen = document.querySelector('.loading-screen')
+//     Pace.on('hide', () => {
+//       const tl = new gsap.timeline({
+//         defaults: {
+//           duration: 0.6,
+//           ease: 'power5.in',
+//         },
+//       })
+
+//       tl.to(loadingScreen, {
+//         y: '-100%',
+//       })
+//     })
+//   }
+// }

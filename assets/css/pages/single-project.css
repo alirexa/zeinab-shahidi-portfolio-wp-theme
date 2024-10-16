@@ -1,0 +1,34 @@
+main.single-project {
+  header.sub-header {
+    margin: 3em 0;
+  }
+  p {
+    font-weight: 100;
+    /* margin: 0 var(--size-sides-spacing); */
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0.5em var(--size-sides-spacing);
+  }
+  .project-details {
+    display: flex;
+    flex-direction: column;
+    margin: 0 var(--size-sides-spacing);
+    .mediums {
+      font-weight: 600;
+    }
+    span {
+    }
+  }
+  a.back-to-category {
+    text-decoration: none;
+    margin: 0 var(--size-sides-spacing);
+
+    span {
+      margin-inline-end: 1em;
+    }
+  }
+  figure {
+    margin-top: 2em;
+  }
+}
