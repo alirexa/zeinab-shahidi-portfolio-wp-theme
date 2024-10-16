@@ -1,4 +1,6 @@
 main.about-section {
+  padding: 0 calc(var(--size-sides-spacing) + 5px);
+
   h1 {
     margin-bottom: 0.5em;
   }
@@ -8,6 +10,8 @@ main.about-section {
     font-weight: 500;
   }
   p {
+    padding: 0 0 1em;
+    margin: 0;
     strong {
       font-weight: 500;
     }

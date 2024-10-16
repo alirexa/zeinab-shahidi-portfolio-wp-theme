@@ -42,9 +42,9 @@
             </div><!-- .site-branding -->
 
             <nav id="site-navigation" class="main-navigation">
-                <button class="mobile-nav-toggle">
+                <!-- <button class="mobile-nav-toggle">
                     --
-                </button>
+                </button> -->
                 <?php
                 wp_nav_menu(
                     [
@@ -54,5 +54,6 @@
                 );
                 ?>
             </nav><!-- #site-navigation -->
+
 
         </header><!-- #masthead -->

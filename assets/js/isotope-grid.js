@@ -6,7 +6,7 @@ function isotopeGrid() {
   const filtersWrapperElem = document.querySelector('.filters')
   const filtersElem = document.querySelectorAll('.filters button')
 
-  if (!gridElem && !filtersElem) return
+  if (!gridElem || !filtersElem) return
 
   const iso = new Isotope(gridElem, {
     // options

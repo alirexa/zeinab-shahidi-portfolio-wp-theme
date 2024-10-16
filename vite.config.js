@@ -10,7 +10,10 @@ export const viteConfig = {
   // custom cache dir for vite
   cacheDir: './node_modules/.vite/press-wind',
   // plugins : ssl, live reload, legacy
+  // Todo: Change this commented one for the build process to work
   plugins: [basicSsl(), liveReload([`${__dirname}+ "/**/*.php`]), legacy({})],
+  // plugins: [basicSsl(), liveReload([`${__dirname}/**/*.php`]), legacy({})],
+
   base:
     process.env.APP_ENV === 'development'
       ? `/wp-content/themes/${getThemeDir()}/`

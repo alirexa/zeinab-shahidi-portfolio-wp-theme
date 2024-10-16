@@ -13,7 +13,7 @@ footer {
     bottom: var(--size-sides-spacing);
     left: var(--size-sides-spacing);
     transition: opacity 400ms ease-in-out;
-
+    z-index: 2;
     body:not(.home) &.hidden {
       opacity: 0;
     }

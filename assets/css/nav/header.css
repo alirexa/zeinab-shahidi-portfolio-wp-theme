@@ -12,7 +12,9 @@ header.site-header {
   left: 0;
   right: 0;
   padding: 0 var(--size-sides-spacing);
-  transition: opacity 400ms ease-in-out;
+  body:not(.home) & {
+    transition: opacity 400ms ease-in-out;
+  }
 
   body:not(.home) &.hidden {
     opacity: 0;

@@ -36,7 +36,7 @@ get_header();
             if (!empty($available_terms)) {
                 foreach ($available_terms as $slug => $name) {
             ?>
-                    <button data-filter=".<?php echo $slug; ?>"><?php echo $name; ?></button>
+            <button data-filter=".<?php echo $slug; ?>"><?php echo $name; ?></button>
             <?php
                 }
             }
@@ -62,29 +62,41 @@ get_header();
                     $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
             ?>
-                    <div class="grid-item <?php echo esc_attr($medium_class_list); ?>">
-                        <div class="project-header">
-                            <span class="project-year"><?php echo esc_html($year); ?></span>
-                            <a href="<?php the_permalink(); ?>">
-                                <h2 class="project-title"><?php echo esc_html(get_the_title()); ?></h2>
-                            </a>
+            <div class="grid-item <?php echo esc_attr($medium_class_list); ?>">
+                <div class="project-header">
+                    <span class="project-year"><?php echo esc_html($year); ?></span>
+                    <a href="<?php the_permalink(); ?>">
+                        <h2 class="project-title"><?php echo esc_html(get_the_title()); ?></h2>
+                    </a>
+                </div>
+                <div class="project-image">
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <?php
+                                        for ($i = 1; $i <= 3; $i++) {
+                                            $image = get_field('cover_image_' . $i); // Assuming ACF fields are named 'cover_image_1', 'cover_image_2', 'cover_image_3'
+                                            if ($image) {
+                                                echo '<div class="swiper-slide"><img src="' . esc_url($image['sizes']['project-cover-thumbnail']) . '" alt="' . esc_attr($image['alt']) . '" loading="lazy"></div>';
+                                            }
+                                        }
+                                        ?>
+                            </div>
                         </div>
-                        <div class="project-image">
-                            <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($featured_image); ?>"
-                                    alt="<?php echo esc_attr(get_the_title()); ?>"></a>
-                        </div>
-                        <div class="project-medium"><?php echo esc_html($medium_name_list); ?></div>
-                    </div>
-                <?php
+                    </a>
+                </div>
+                <div class="project-medium"><?php echo esc_html($medium_name_list); ?></div>
+            </div>
+            <?php
                 }
                 wp_reset_postdata();
             } else {
                 ?>
-                <div class="margin-element">
-                    <?php
+            <div class="margin-element">
+                <?php
                     echo '<h2>No projects found!</h2>';
                     ?>
-                </div>
+            </div>
             <?php
             }
             ?>

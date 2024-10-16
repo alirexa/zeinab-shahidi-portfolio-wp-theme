@@ -33,15 +33,15 @@ get_header(); ?>
                 the_post();
                 if (!is_home() && !is_front_page()) {
         ?>
-                    <h1><?php the_title(); ?></h1>
-            <?php
+        <h1 class="screen-reader-text "><?php the_title(); ?></h1>
+        <?php
                 }
                 the_content();
             }
         } else {
             ?>
 
-            <p>No posts found. :(</p>
+        <p>No posts found. :(</p>
 
         <?php
 

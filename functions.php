@@ -8,8 +8,8 @@ namespace  PressWindStarter;
 
 // not defined => development
 if (!defined('WP_ENV')) {
-    define('WP_ENV', 'development');
-    // define('WP_ENV', 'production');
+    // define('WP_ENV', 'development');
+    define('WP_ENV', 'production');
 }
 
 
@@ -44,6 +44,8 @@ function setup()
     add_theme_support('title-tag');
 
     add_theme_support('post-thumbnails');
+
+    add_image_size('project-cover-thumbnail', 450, 300, true);
 
     // load i18n text
     load_theme_textdomain('press-wind-theme', get_template_directory() . '/languages');

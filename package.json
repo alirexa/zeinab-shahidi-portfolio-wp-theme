@@ -61,7 +61,8 @@
     },
     "dependencies": {
         "gsap": "^3.12.5",
-        "isotope-layout": "^3.0.6"
+        "isotope-layout": "^3.0.6",
+        "swiper": "^11.1.14"
     },
     "browserslist": [
         "extends @wordpress/browserslist-config"

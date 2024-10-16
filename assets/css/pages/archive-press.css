@@ -1,4 +1,6 @@
 main.press-archive {
+  padding: 0 calc(var(--size-sides-spacing) + 5px);
+
   .main-content {
     display: grid;
     gap: 2em;
@@ -15,6 +17,8 @@ main.press-archive {
     span {
       font-weight: 100;
       transition: all 200ms ease-in-out;
+      margin: 0;
+      padding: 0;
     }
     font-size: 1.5rem;
     transition: all 400ms ease-in-out;
@@ -24,8 +28,10 @@ main.press-archive {
   }
   .excerpt {
     margin-top: 1em;
+    padding: 0;
   }
   .grid-item {
+    width: 100%;
     &:hover {
       h2 {
       }

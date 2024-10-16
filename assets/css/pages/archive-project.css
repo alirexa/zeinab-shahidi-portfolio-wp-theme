@@ -3,7 +3,6 @@ main#primary.projects-archive {
 }
 .projects-grid {
   margin: 0 calc(var(--size-sides-spacing) + 5px);
-
   .grid-item {
     display: flex;
     flex-direction: column;
@@ -12,10 +11,12 @@ main#primary.projects-archive {
     transition: gap 200ms ease-in-out;
     &:hover {
       .project-header {
-        transform: translateY(5px);
-      }
-      .project-medium {
-        transform: translateY(-5px);
+        h2 {
+          font-weight: 900;
+        }
+        .project-year {
+          color: var(--wp--preset--color--accent-dark);
+        }
       }
     }
   }
@@ -30,24 +31,35 @@ main#primary.projects-archive {
       text-decoration: none;
       transition: color 200ms ease-in-out;
     }
+    .project-year {
+      transition: color 200ms ease-in-out;
+      &::after {
+        content: '•';
+        margin-inline-start: 0.8em;
+      }
+    }
     h2 {
       font-size: 1rem;
       margin: 0;
-      &::before {
-        content: '•••';
-        margin-inline-end: 0.8em;
-      }
+      transition: font-weight 800ms ease-in-out;
     }
   }
   .project-image {
-    transform-origin: center bottom;
+    position: relative;
     overflow: hidden;
-    img {
-      height: 100%;
+    .swiper-container {
       width: 100%;
-      object-fit: cover;
-      transform: scale(1.2);
-      transition: transform 2400ms ease-in-out;
+      height: 100%;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
     }
   }
   .project-medium {
@@ -141,6 +153,6 @@ main#primary.projects-archive {
     width: 4%;
   }
   @media screen and (min-width: 1025px) {
-    width: 3%;
+    width: 3.5%;
   }
 }

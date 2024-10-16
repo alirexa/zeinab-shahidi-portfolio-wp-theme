@@ -24,7 +24,7 @@ get_header();
                 the_post();
                 if (!is_home() && !is_front_page()) {
         ?>
-        <h1><?php the_title(); ?></h1>
+        <h1 class="screen-reader-text "><?php the_title(); ?></h1>
         <?php
                 }
                 the_content();
